@@ -1,0 +1,16 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node index.ts --target https://steamcommunity.com/market/listings/730/%E2%98%85%20Ursus%20Knife"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.41",
+    "@types/puppeteer": "^5.4.6",
+    "puppeteer": "^14.3.0",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  }
+}
