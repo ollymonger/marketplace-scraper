@@ -25,7 +25,8 @@ const openPage = async () => {
 
             const amount = el?.firstElementChild?.textContent
 
-            if(price != null && amount != null) return { itemName, quantity: amount, value: price }
+            const regexPrice = price?.replace(/((USD)|(\$))/,'')
+            if(price != null && amount != null) return { itemName, quantity: amount,currency:'USD', value: regexPrice }
 
             const newEl = document.getElementById('searchResultsRows');
 
@@ -35,8 +36,8 @@ const openPage = async () => {
 
             if(child != null) {
                 const noWhiteSpace = child.trimStart()
-                const regexCurrency = noWhiteSpace.match(/(pуб|£|USD|¥|zł|NT|A|AED)/gm)
-                const value = noWhiteSpace.replace(/[\t]/g,'').replace(/(pуб.|£|USD|¥|zł|NT| |AED|A)/gm, '').replace(/(--)/,'0')
+                const regexCurrency = noWhiteSpace.match(/(pуб|£|USD|¥|zł|NT|A|AED|\$)/gm)
+                const value = noWhiteSpace.replace(/[\t]/g,'').replace(/(pуб.|£|USD|¥|zł|NT| |AED|A|\$)/gm, '').replace(/(--)/,'0')
                 return { itemName, amount: newAmount, regexCurrency, value }
             }
         })

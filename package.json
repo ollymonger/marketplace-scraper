@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node index.ts --target https://steamcommunity.com/market/listings/730/%E2%98%85%20Ursus%20Knife"
+    "start": "ts-node index.ts --target https://steamcommunity.com/market/listings/730/Clutch%20Case"
   },
   "dependencies": {
     "@types/node": "^17.0.41",
